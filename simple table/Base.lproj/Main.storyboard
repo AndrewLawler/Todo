@@ -41,10 +41,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqD-il-I8v">
-                                <rect key="frame" x="172" y="132" width="30" height="30"/>
+                                <rect key="frame" x="172" y="128" width="30" height="30"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <state key="normal" title="Go">
+                                <state key="normal" title="+/-">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -61,13 +61,13 @@
                         <constraints>
                             <constraint firstItem="wDg-DG-WsV" firstAttribute="top" secondItem="Hzp-4a-KcH" secondAttribute="bottom" constant="18.5" id="2dP-Xr-hzE"/>
                             <constraint firstItem="Hzp-4a-KcH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="Ee6-B4-8Zv"/>
-                            <constraint firstItem="cqD-il-I8v" firstAttribute="top" secondItem="wDg-DG-WsV" secondAttribute="bottom" constant="17" id="LLy-o5-hRp"/>
                             <constraint firstItem="wDg-DG-WsV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Owq-gv-yoJ"/>
                             <constraint firstItem="wDg-DG-WsV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QPY-ey-S8B"/>
                             <constraint firstItem="Hzp-4a-KcH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="SJ8-hz-vNd"/>
                             <constraint firstItem="cqD-il-I8v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="172" id="SJD-Qd-XsM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hzp-4a-KcH" secondAttribute="trailing" constant="16" id="V0x-qb-aGM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cqD-il-I8v" secondAttribute="trailing" constant="173" id="W9R-Ti-qX2"/>
+                            <constraint firstItem="cqD-il-I8v" firstAttribute="top" secondItem="wDg-DG-WsV" secondAttribute="bottom" constant="13" id="dsD-bk-9n5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wDg-DG-WsV" secondAttribute="trailing" constant="16" id="eeq-fJ-tjF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

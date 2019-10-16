@@ -14,18 +14,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var inputText: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var incorrect: UILabel!
     
     @IBAction func goBtn(_ sender: Any) {
         let input = inputText.text
+        inputText.text = ""
         if input==""{
             inputText.text = ""
-            incorrect.text = "Please enter something"
-            tableView.isHidden = true
         }
         else {
             inputText.resignFirstResponder()
-            tableView.isHidden = false
             if let index = names.firstIndex(of: input!) {
                 names.remove(at: index)
             }
@@ -33,6 +30,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 names.append(input!)
             }
             tableView.reloadData()
+            if names.count==0 {
+                tableView.isHidden = true
+            }
+            else {
+                tableView.isHidden = false
+            }
         }
     }
     
