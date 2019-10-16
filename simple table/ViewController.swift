@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var names = [String]()
+    var todos = [String]()
+    var mySeq = [String]()
+    var sequenceNumber = 0
     
     @IBOutlet weak var inputText: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -23,14 +25,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         else {
             inputText.resignFirstResponder()
-            if let index = names.firstIndex(of: input!) {
-                names.remove(at: index)
+            if let index = todos.firstIndex(of: input!) {
+                todos.remove(at: index)
+                mySeq.remove(at: index)
             }
             else {
-                names.append(input!)
+                sequenceNumber += 1
+                mySeq.append("\(sequenceNumber)")
+                todos.append(input!)
             }
             tableView.reloadData()
-            if names.count==0 {
+            if todos.count==0 {
                 tableView.isHidden = true
             }
             else {
@@ -40,19 +45,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return names.count
+        return todos.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "myCell")
-        cell.textLabel?.text = names[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        let cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "myCell")
+        cell.textLabel?.text = todos[indexPath.row]
+        cell.detailTextLabel?.text = mySeq[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt
+    indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.todos.remove(at: indexPath.row)
+            self.mySeq.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.isHidden = true
     }
-
 
 }
 
