@@ -15,16 +15,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nVq-MU-Bwo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nVq-MU-Bwo">
                                 <rect key="frame" x="0.0" y="168" width="375" height="499"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="HDn-pA-sf2">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HDn-pA-sf2" id="DP8-Wc-nS3">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -67,8 +66,13 @@
                             <constraint firstItem="cqD-il-I8v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="172" id="SJD-Qd-XsM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hzp-4a-KcH" secondAttribute="trailing" constant="16" id="V0x-qb-aGM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cqD-il-I8v" secondAttribute="trailing" constant="173" id="W9R-Ti-qX2"/>
+                            <constraint firstItem="nVq-MU-Bwo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cOG-xI-FM8"/>
                             <constraint firstItem="cqD-il-I8v" firstAttribute="top" secondItem="wDg-DG-WsV" secondAttribute="bottom" constant="13" id="dsD-bk-9n5"/>
+                            <constraint firstItem="nVq-MU-Bwo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eBQ-xf-YGt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wDg-DG-WsV" secondAttribute="trailing" constant="16" id="eeq-fJ-tjF"/>
+                            <constraint firstItem="nVq-MU-Bwo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="g4m-RK-ASy"/>
+                            <constraint firstItem="nVq-MU-Bwo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kpf-KZ-wUg"/>
+                            <constraint firstItem="nVq-MU-Bwo" firstAttribute="top" secondItem="cqD-il-I8v" secondAttribute="bottom" constant="10" id="lNo-uT-cor"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
