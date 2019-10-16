@@ -63,6 +63,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.deleteRows(at: [indexPath], with: .fade)
             self.tableView.endUpdates()
+            tableView.reloadData()
+            if todos.count==0 {
+                tableView.isHidden = true
+            }
         }
     }
     
