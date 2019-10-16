@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             else {
                 sequenceNumber += 1
-                mySeq.append("\(sequenceNumber)")
+                mySeq.append("#\(sequenceNumber)")
                 todos.append(input!)
             }
             tableView.reloadData()
@@ -57,11 +57,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt
     indexPath: IndexPath) {
         if editingStyle == .delete {
+            self.tableView.beginUpdates()
             self.todos.remove(at: indexPath.row)
             self.mySeq.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            tableView.reloadData()
+            self.tableView.endUpdates()
         }
     }
     
