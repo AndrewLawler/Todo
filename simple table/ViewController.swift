@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var todos = [String]()
     var mySeq = [String]()
     var sequenceNumber = 0
+
     
     @IBOutlet weak var inputText: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -29,17 +30,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 todos.remove(at: index)
                 mySeq.remove(at: index)
             }
+
             else {
                 sequenceNumber += 1
                 mySeq.append("#\(sequenceNumber)")
                 todos.append(input!)
-            }
+            
             tableView.reloadData()
             if todos.count==0 {
                 tableView.isHidden = true
             }
             else {
                 tableView.isHidden = false
+            }
             }
         }
     }
@@ -57,16 +60,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt
     indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.tableView.beginUpdates()
-            self.todos.remove(at: indexPath.row)
-            self.mySeq.remove(at: indexPath.row)
+            tableView.beginUpdates()
+            todos.remove(at: indexPath.row)
+            mySeq.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            self.tableView.endUpdates()
-            tableView.reloadData()
+            tableView.endUpdates()
             if todos.count==0 {
                 tableView.isHidden = true
             }
+            tableView.reloadData()
         }
     }
     
@@ -74,6 +76,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.isHidden = true
     }
-
 }
 
